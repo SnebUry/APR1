@@ -1,0 +1,55 @@
+"""Faça um programa que crie uma lista com 10 números inteiros
+fornecidos pelo usuário. Após criar a lista, o programa deverá
+imprimir:
+ O maior elemento da lista
+ O menor elemento da lista
+ A soma de todos os elementos da lista
+ Os elementos ímpares"""
+
+#criar a lista
+L = []
+i = 0
+while i < 5:
+    numero = int(input("Escreva um numero:"))
+    L.append(numero)
+    i+=1
+#procurar o maior elemento da lista
+maior = 0
+i = 0
+while i < len(L):
+    if maior < L[i]:
+        maior = L[i]
+    i+=1
+
+print(L)
+print(f"o maior numero é {maior}")
+
+#procurar o menor elemento da lista
+menor = L[0]
+i = 0
+while i < len(L):
+    if menor >= L[i]:
+        menor = L[i]
+    i+=1
+print(f"o menor numero é {menor}")
+#somar os elementos
+soma = 0
+i = 0
+while i < len(L):
+    soma+=L[i]
+    i+=1
+print(f"a soma é {soma}")
+#mostrar os elementos impares
+i = 0
+while i < len(L):
+    if (L[i])% 2 != 0:
+        print(f"o numero {L[i]} é impar.")
+    i+=1
+
+#Printar numeros maiores que 18
+i = 0
+while i < len(L):
+    if L[i] > 18:
+
+        print(f"O numero {L[i]} é maior que 18.")
+    i+=1
