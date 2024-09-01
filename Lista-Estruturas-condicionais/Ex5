@@ -1,0 +1,28 @@
+"""Crie um algoritmo para resolver equações do 2º grau.Considere:
+    ax2 + bx + c = 0  (a deve ser diferente de 0)
+    delta = b2- 4 * a * c
+    Caso: delta < 0, não existe raiz real
+    delta = 0, existe uma raiz real:  x = (-b) / (2 * a)
+    delta > 0, existem duas raízes reais:
+    x1 = (- b + raiz quadrada de delta) / (2 * a) x2 = (- b - raiz quadrada de delta) / (2 * a)"""
+
+a = float(input("Digite o valor de a: "))
+b = float(input("Digite o valor de b: "))
+c = float(input("Digite o valor de c: "))
+
+if a != 0:
+    delta = b**2 - 4*a*c
+
+    if delta < 0:
+        print("Não existe raiz real.")
+    elif delta == 0:
+        x = -b / (2*a)
+        print(f"Existe uma raiz real: x = {x}")
+    else:
+        raiz_delta = delta ** 0.5
+        
+        x1 = (-b + raiz_delta) / (2*a)
+        x2 = (-b - raiz_delta) / (2*a)
+        print(f"Existem duas raízes reais: x1 = {x1}, x2 = {x2}")
+else:
+    print("O coeficiente 'a' deve ser diferente de 0.")
