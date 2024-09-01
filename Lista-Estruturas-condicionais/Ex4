@@ -1,0 +1,18 @@
+"""Faça um algoritmo que receba três valores A, B e C e verifica se eles podem ser os comprimentos dos lados de um triângulo.
+ Se forem, mostrar se é um triângulo equilátero, isósceles ou escaleno. Considere que:
+ Para ser triângulo: cada lado é menor que a soma dos outros dois lados. 
+ Triângulo equilátero: tem três lados iguais 
+ Triângulo isósceles: tem dois lados iguais e um diferente 
+ Triângulo escaleno: tem três lados diferentes"""
+
+A = float(input("Escreva o valor de um lado em cm: "))
+B = float(input("Escreva outro valor: "))
+C = float(input("Escreva o terceiro: "))
+
+if A == B and B == C:
+    print("é um triangulo equilátero!")
+elif A != B and A!=C and B!=C:
+    print("é um triangulo escaleno!")
+else:
+    print("é um triangulo isósceles!")
+    
