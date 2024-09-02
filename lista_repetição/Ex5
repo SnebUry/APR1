@@ -1,0 +1,15 @@
+"""Faça um programa que receba um número inteiro maior que 1,
+verifique se o número é primo ou não e mostre a mensagem de número primo ou de número não primo.
+Obs: Um número é primo quando é divisível apenas por 1 e por ele mesmo."""
+primo = True
+num = int(input("Escreva um numero inteiro:"))
+i = 2
+while i < num and primo == True:
+    if num%i == 0:
+        primo = False
+    i+=1
+if primo == True:
+    print("Numero Primo!")
+else:
+    print("Numero não primo!")
+    
