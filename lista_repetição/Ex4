@@ -1,0 +1,7 @@
+"""Faça um programa para mostrar as tabuadas de todos os números de 1 a 10."""
+for i in range(11):
+    for j in range(11):
+        multiplica = i*j
+        print(f"{i} x {j} = {multiplica}")        
+        j+=1
+    i+=1
