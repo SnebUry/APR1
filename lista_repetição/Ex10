@@ -1,0 +1,23 @@
+'''Faça um programa que receba um número N fornecido pelo usuário e
+mostre os N termos da série a seguir. Depois, imprima a soma total da
+série.'''
+
+N_Termos= int(input("Quantos termos quer: "))
+
+numerador = 1
+denominador = 1
+
+print(f"Série = ",end=" ")
+
+soma = 0
+while numerador <= N_Termos:
+    if N_Termos == numerador:
+        print(f"{numerador}/{denominador} ",end=" ")
+    else:
+        print(f"{numerador}/{denominador} +", end=" ")
+    soma+= numerador/denominador
+    numerador+=1
+    denominador+=2
+
+print()
+print(f"Total = {soma}", end=" ")
