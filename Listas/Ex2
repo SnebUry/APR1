@@ -1,0 +1,12 @@
+"""Crie um programa que leia inicialmente uma sequência de N notas de alunos fornecidas pelo usuário e ao final mostre a sequência e sua média aritmética.
+ Defina um critério de parada para a entrada de notas pelo usuário."""
+
+N = int(input("Quantas notas serão fornecidas? "))
+lista = []
+soma= 0
+for i in range(N):
+    nota = float(input("Nota: "))
+    lista.append(nota)
+    soma+=nota
+media =soma/N
+print(f"as notas são: {lista}, sendo sua média= {media}")
