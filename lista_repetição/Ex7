@@ -1,0 +1,37 @@
+"""
+7. Faça um programa em Python que leia um conjunto de valores correspondentes às notas que os alunos obtiveram em uma prova de Algoritmos. 
+Quando o valor fornecido for um número negativo, significa que não existem mais notas para serem lidas. Após isso seu programa deverá:
+ Escrever quantas notas são maiores ou iguais a 6.0 
+ Escrever quantas notas são maiores ou iguais a 4.0 e menores que 6.0 
+ Escrever quantos notas são menores que 4.0 
+ Escrever a média das notas fornecidas pelo usuário.
+ """
+print("(Digite um negativo para encerrar o programa).\n")
+notas = float(input(" Escreva a nota: "))
+
+notas_6 = 0
+notas4_6 = 0
+notas0_4 = 0
+soma = 0
+while notas >= 0:
+    
+    if notas >= 6:
+        notas_6+=1
+
+    elif notas >= 4 and notas < 6:
+        notas4_6+=1
+
+    elif notas < 4 and notas >=0:
+        notas0_4+=1
+
+    soma+= notas
+    notas = float(input("Escreva a nota: "))
+
+total_notas = notas_6 + notas4_6 + notas0_4
+if total_notas > 0:
+    media = soma / total_notas
+else:
+    media = 0
+
+media =  (soma)  / (notas0_4 + notas4_6 + notas_6)
+print(f"Foram escritas {notas_6} notas maiores ou iguais a 6, {notas4_6} de 4 a 6, {notas0_4} de 0 a 4\n A média de todas as notas é {media:.2f}")
