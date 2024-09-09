@@ -1,0 +1,24 @@
+"""Crie um programa que leia inicialmente uma sequência de N números
+inteiros e ao seu final mostre a sequência original,
+a soma de seus elementos que forem pares
+e a multiplicação dos elementos que forem impares"""
+
+
+N = int(input("Quantos numeros será lido? "))
+lista = []
+
+while N > 0:
+    numero = int(input("Escreva o número: "))
+    lista.append(numero)
+    N-=1
+soma_pares = 0
+multiplica_impares = 1
+for i in lista:
+    if i %2 == 0:
+        soma_pares+= i
+for i in lista:
+    if i%2 != 0:
+        multiplica_impares= multiplica_impares* i
+print()
+
+print( f"a sequencia original da lista: {lista}\n valor da soma dos pares: {soma_pares}\n multiplicação dos impares: {multiplica_impares}. " )
