@@ -1,0 +1,23 @@
+"""Crie um programa que leia inicialmente duas sequências de N
+elementos cada uma e ao final mostre as duas sequências originais e a
+sequência resultante da soma de seus elementos."""
+
+A = []
+B = []
+N = int(input("Quantos numeros?"))
+
+for i in range(N):
+    numeros = int(input(f"O {i+1}° numero da lista A: "))
+    A.append(numeros)
+for i in range(N):
+    numeros = int(input(f"O {i+1}° numero da lista B: "))
+    B.append(numeros)
+soma = 1
+C = []
+for i in range(len(A)):
+    for j in range(len(B)):
+        soma=A[i]+B[i]
+    C.append(soma)
+    print(soma)
+
+print(A, B, C)
