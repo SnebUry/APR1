@@ -1,0 +1,34 @@
+"""Crie um programa que leia inicialmente uma sequencia de N números
+inteiros. Depois, o programa deve gerar e mostrar 2 novas listas a
+partir da primeira: uma sem repetição de elementos e outra com os
+elementos que se repetem na lista original."""
+
+N = int(input("Quantos numeros? "))
+lista_inicial = []
+
+#colocando o conteudo na lista.
+while N>0:
+    numeros = int(input("Que numero? "))
+    lista_inicial.append(numeros)
+    N-=1
+#criando as 2 outras
+repetidos = []
+nao_repetidos = []
+#percorre a lista original
+for i in lista_inicial:
+    # se o indice (i) estiver na lista numeros não repetidos>
+    if i  in nao_repetidos:
+        #se o indice(i) não estiver na lista de numeros repetidos>
+        if i not in repetidos:
+            #o indice(i) será adicionado a lista de numeros repetidos>
+            repetidos.append(i)
+            #o indice(i) será removido da lista de não repetidos, pois ele ja constava na lista anteriormente.
+        nao_repetidos.remove(i)
+        #porém, se ele não estiver na lista de numros repetidos>
+    elif i not in repetidos:
+        #O indice(i) será adicionado na lista de numeros não repetidos.
+        nao_repetidos.append(i)
+
+print(f"Numeros repetidos: {repetidos}")
+print(f"Numeros não repetidos: {nao_repetidos}")
+print(f"Lista original: {lista_inicial}")
