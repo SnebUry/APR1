@@ -1,0 +1,20 @@
+"""Crie um programa que dada uma sequência de N elementos fornecidos pelo usuário mostre a sequência original e a sequência elevada ao cubo."""
+
+N = int(input("Escreva quantos elementos irá ter: "))
+
+lista = []
+
+while N > 0:
+    elemento = int(input("Escreva o elemento: "))
+    lista.append(elemento)
+    N-=1
+
+lista_elevada_cubo = []
+cubo = 0
+
+for i in lista:
+    cubo = i
+    cubo *= i
+    lista_elevada_cubo.append(cubo)
+
+print(f"A lista original:\n {lista}\nA lista com seus elementos elevados ao cubo:\n {lista_elevada_cubo}")
