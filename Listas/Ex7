@@ -1,0 +1,14 @@
+"""Crie um programa que leia inicialmente uma sequência de N números inteiros fornecidos 
+pelo usuário e mostre ao final da leitura a sequência original e a sequência invertida."""
+
+N = int(input("Escreva quantos elementos terá: "))
+
+lista = []
+
+while N > 0:
+    original = int(input("Escreva os numeros que quer ai: "))
+    lista.append(original)
+    N-=1
+lista_inversa = lista[::-1]
+
+print(f"Lista normal:\n {lista}\n Lista inversa:\n {lista_inversa}")
