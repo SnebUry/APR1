@@ -1,0 +1,33 @@
+"""Faça um programa que solicite do usuário um valor N, representando a dimensão de uma matriz quadrada (matriz A).
+Em seguida, o programa deverá solicitar do usuário os elementos da matriz A e, posteriormente, 
+deverá criar a matriz transposta de A (A t t ). Ao final, deve ser mostrada a matriz original e sua respectiva transposta.
+Lembre-se que a matriz transposta A será obtida a partir da matriz A trocando-se ordenadamente as linhas por colunas (ou as colunas por linhas)"""
+
+N = int(input("Digite a dimensão da matriz quadrada (N x N): "))
+matriz_original = []
+matriz_transposta = []
+
+# Solicita os elementos da matriz original
+for i in range(N):
+    linha = []
+    for j in range(N):
+        elemento = int(input(f"Digite o elemento da posição ({i}, {j}): "))
+        linha.append(elemento)
+    matriz_original.append(linha)
+
+# Cria a matriz transposta
+for i in range(N):
+    linha_transposta = []
+    for j in range(N):
+        linha_transposta.append(matriz_original[j][i])
+    matriz_transposta.append(linha_transposta)
+
+# Mostra a matriz original
+print("\nMatriz Original:")
+for linha in matriz_original:
+    print(*linha)
+
+# Mostra a matriz transposta
+print("\nMatriz Transposta:")
+for linha in matriz_transposta:
+    print(*linha)
