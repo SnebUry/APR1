@@ -1,0 +1,31 @@
+"""Crie um programa que solicita do usuário um valor N representando a quantidade linhas
+e um valor M representando a quantidade de colunas de uma matriz. 
+Depois, o programa deverá solicitar do usuário N x M elementos para serem incluídos na matriz. 
+Por fim, o programa deverá percorrer a matriz para encontrar e imprimir o seu maior elemento e o seu menor elemento"""
+
+Matriz = []
+N = int(input("Quantas linhas? "))
+M = int(input("Quantas colunas? "))
+
+for i in range (N):
+    Linha = []
+    for j in range (M):
+        elemento = int(input(f"Digite o valor presente na linha {i} coluna {j}: "))
+        Linha.append(elemento)
+    Matriz.append(Linha)
+menor_elemento = Matriz[0][0]
+maior_elemento = Matriz[0][0]
+for i in range(N):
+    for j in range(M):
+        if menor_elemento >= Matriz[i][j]:
+            menor_elemento = Matriz [i][j]
+        if maior_elemento <= Matriz[i][j]:
+            maior_elemento = Matriz[i][j]
+
+
+for i in range(N):
+    for j in range(M):
+        print(Matriz[i][j], end= " ")
+    print("\n")
+
+print(f"O maior elemento é: {maior_elemento}\n O menor elemento é: {menor_elemento}")
