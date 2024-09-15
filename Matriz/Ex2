@@ -1,0 +1,29 @@
+"""Faça um programa que solicite do usuário um valor N,
+representando a dimensão de uma matriz quadrada (matriz A).
+Em seguida, o programa deverá solicitar do usuário os elementos da matriz A e, posteriormente, 
+deverá verificar se A é simétrica. A matriz será simétrica se e somente se todo elemento A[i,j] = A[j,i]."""
+
+Matriz = []
+N = int(input("Qual a dimensão da matriz? "))
+
+for i in range(N):
+    Linha = []
+    for j in range(N):
+        elementos = int(input(f"Qual o elemento da linha {i} e coluna {j}? "))
+        Linha.append(elementos)
+    Matriz.append(Linha)
+simetrica = True
+for i in range(N):
+    j = 0
+    while j<N and simetrica:
+        if Matriz[i][j] != Matriz[j][i]:
+            simetrica = False
+        j+=1
+if simetrica:
+    print("A matriz é simétrica!")
+else:
+    print("A matriz não é simétrica!")
+for i in range(N):
+    for j in range(N):
+        print(Matriz[i][j], end= " ")
+    print("\n")
