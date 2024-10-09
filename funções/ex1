@@ -1,1 +1,20 @@
+"""Faça uma função InteiroPositivo(n) que verifica se uma string fornecida como
+parâmetro pode ser convertida para um número inteiro positivo. A função deverá
+retornar True em caso afirmativo e False, caso contrário. O programa principal deverá
+fazer a conversão para inteiro, caso o resultado da função seja True, ou imprimir a
+mensagem adequada, caso o resultado seja False."""
+
+def InteiroPositivo(n):
+    if n.isdigit() and int(n) > 0:
+        return True
+    return False
+
+
+palavra = input("Digite um número: ")
+
+if InteiroPositivo(palavra):
+    numero = int(palavra)
+    print(f"O número {numero} é um inteiro positivo.")
+else:
+    print("A entrada não é um número inteiro positivo.")
 
