@@ -1,0 +1,25 @@
+"""Faça uma função Inteiro(n) que verifica se uma string fornecida como parâmetro
+pode ser convertida para um número inteiro positivo ou negativo. A função deverá
+retornar True em caso afirmativo e False, caso contrário. O programa principal deverá
+fazer a conversão para inteiro, caso o resultado da função seja True, ou imprimir a
+mensagem adequada, caso o resultado seja False."""
+
+def inteiro(n):
+    if n and n[0] == '-':
+        return n[1:].isdigit()
+    return n.isdigit()
+
+def main():
+    palavra = input("Digita algo ai: ")
+    if inteiro(palavra):
+        numero = int(palavra)
+        if numero > 0:
+            print(f"O {numero} pode ser convertido para inteiro positivo!")
+        elif numero < 0:
+            print(f"O {numero} pode ser convertido para inteiro negativo!")
+        else:
+            print(f"O {numero} é zero!")
+    else:
+        print("A entrada não é um número válido.")
+
+main()
