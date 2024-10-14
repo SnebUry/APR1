@@ -1,0 +1,19 @@
+def Real(n):
+    ponto_encontrado = False
+    for char in n:
+        if char == '.':
+            if ponto_encontrado:
+                return False
+            ponto_encontrado = True
+        elif not char.isdigit():
+            return False
+    return True
+
+# Programa principal
+entrada = input("Digite um valor: ")
+
+if Real(entrada):
+    numero = int(float(entrada))
+    print(f"O valor convertido para inteiro é: {numero}")
+else:
+    print("A string fornecida não pode ser convertida para um número real.")
