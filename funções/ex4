@@ -1,0 +1,19 @@
+Crie uma função que receba como parâmetro um número inteiro. A função
+deve retornar um número inteiro, conforme a seguir:
+a) Retornar 1 se o número recebido é positivo
+b) Retornar -1 se o número recebido é negativo
+c) Retornar 0 se o número recebido é zero.
+
+def verificar_numero(n):
+    if n > 0:
+        return 1
+    elif n==0:
+        return 0
+    elif n <0:
+        return -1
+
+def main():
+    numero = int(input("Escreva um numero inteiro: "))
+    resultado = verificar_numero(numero)
+    print(f"resutado é: {resultado}")
+main()
