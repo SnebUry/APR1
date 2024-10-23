@@ -1,0 +1,63 @@
+import os
+
+def carregar_estudantes(nome_arquivo):
+    estudantes = {}
+    if os.path.exists(nome_arquivo):
+        with open(nome_arquivo, 'r') as file:
+            for linha in file:
+                dados = linha.split()
+                nome = dados[0]
+                notas = list(map(int, dados[1:]))
+                estudantes[nome] = notas
+    else:
+        print(f"Arquivo '{nome_arquivo}' não encontrado. Crie o arquivo primeiro.")
+    return estudantes
+
+def estudante_com_mais_de_seis_notas(estudantes):
+    for nome, notas in estudantes.items():
+        if len(notas) > 6:
+            return nome
+    return None
+
+def media_dos_estudantes(estudantes):
+    for nome, notas in estudantes.items():
+        media = sum(notas) / len(notas)
+        print(f'{nome}: Média = {media:.2f}')
+
+def min_max_dos_estudantes(estudantes):
+    for nome, notas in estudantes.items():
+        menor = min(notas)
+        maior = max(notas)
+        print(f'{nome}: Menor Nota = {menor}, Maior Nota = {maior}')
+
+def criar_arquivo_estudantes(nome_arquivo):
+    with open(nome_arquivo, 'w') as file:
+        while True:
+            nome = input("Digite o nome do aluno (ou 'sair' para encerrar): ")
+            if nome.lower() == 'sair':
+                break
+            notas = input("Digite as notas do aluno separadas por espaço: ")
+            file.write(f"{nome} {notas}\n")
+
+def main():
+    # Criar o arquivo
+    nome_arquivo = 'estudantes.txt'
+    criar_arquivo_estudantes(nome_arquivo)
+    print(f'Arquivo "{nome_arquivo}" criado com sucesso.')
+
+    # Carregar os estudantes do arquivo
+    estudantes = carregar_estudantes(nome_arquivo)
+
+    # a) Estudante com mais de 6 notas
+    nome_estudante = estudante_com_mais_de_seis_notas(estudantes)
+    print(f'Estudante com mais de 6 notas: {nome_estudante}')
+
+    # b) Média das notas de cada estudante
+    print("\nMédia das notas de cada estudante:")
+    media_dos_estudantes(estudantes)
+
+    # c) Nota mínima e máxima de cada estudante
+    print("\nNota mínima e máxima de cada estudante:")
+    min_max_dos_estudantes(estudantes)
+
+main()
